@@ -1,0 +1,30 @@
+# -*- sh -*-
+# Template file for 'nvidia-xrun'
+pkgname=nvidia-xrun
+version=af3b7349b322169f5e57ce30da760e50d94644cc
+revision=1
+archs=noarch
+depends="bash"
+short_desc="Utility to run separate X with discrete nvidia graphics with full performance"
+maintainer="Hristos N. Triantafillou <voidpkg@hristos.lol>"
+license="GPL-2.0-or-later"
+homepage="https://github.com/Witko/nvidia-xrun"
+changelog="https://github.com/Witko/nvidia-xrun/commits/master"
+distfiles="${homepage}/archive/${version}.tar.gz"
+checksum=ada35069fcd7e41912aa02fca69c5d151474ba22175a13266aa6fcf9c056dab6
+_pkg="${pkgname}-${version}"
+
+do_install() {
+    vinstall nvidia-xinitrc 0644 etc/X11/xinit
+    sed -i 's|^  ModulePath "/usr/lib32/xorg/modules"|  # ModulePath "/usr/lib32/xorg/modules"|g' nvidia-xorg.conf
+    vinstall nvidia-xorg.conf 0644 etc/X11
+    vinstall config/nvidia-xrun 0644 etc/default
+    vinstall launchers/nvidia-xrun-openbox.desktop 0755 usr/share/xsessions
+    vinstall launchers/nvidia-xrun-plasma.desktop 0755 usr/share/xsessions
+
+    vbin nvidia-xrun
+}
+
+post_install() {
+	vlicense LICENSE
+}
