@@ -1,7 +1,14 @@
 # Template file for 'libGL'
+
+# With ACO:
+# https://steamcommunity.com/games/221410/announcements/detail/1602634609636894200
+
+# I re-tar'ed the source so that this package could be built with a sane version number.
+
 pkgname=libGL
-version=19.2.5
-revision=1
+archs="x86_64 i686"
+version=20.0.0
+revision=aco1
 wrksrc="mesa-${version}"
 build_style=meson
 configure_args="-Dshared-glapi=true -Dgbm=true -Degl=true
@@ -20,9 +27,9 @@ short_desc="Graphics library similar to SGI's OpenGL"
 maintainer="Orphaned <orphan@voidlinux.org>"
 license="MIT, LGPL-2.1-or-later"
 homepage="https://www.mesa3d.org/"
-changelog="https://www.mesa3d.org/relnotes/${version}.html"
-distfiles="https://mesa.freedesktop.org/archive/mesa-${version}.tar.xz"
-checksum=3d010a366b28d10bdd71e32091d8684baf1522e6466c5c5703667091b2108c8b
+changelog="https://github.com/daniel-schuermann/mesa/commit/${version}"
+distfiles="https://hristos.lol/f/mesa-${version}.tar.gz"
+checksum=671d0f69331ee5d486162c4668b3d6b00806d7542b8a5935b6a59c69e2d23505
 
 build_options="wayland"
 build_options_default="wayland"
