@@ -137,12 +137,12 @@ libbrcmOpenVG.so rpi-userland-20180103_2
 libwayland-egl.so.1 wayland-1.15.0_4
 libGL.so.1 libGL-7.11_1
 libnvcuvid.so.1 nvidia-primus-libs-340.46_1 ignore
-libnvidia-tls.so.430.14 nvidia-primus-libs-340.46_1 ignore
-libnvidia-glcore.so.430.14 nvidia-primus-libs-340.46_1 ignore
-libnvidia-fatbinaryloader.so.430.14 nvidia-primus-libs-430.14_1 ignore
+libnvidia-tls.so.440.31 nvidia-primus-libs-340.46_1 ignore
+libnvidia-glcore.so.440.31 nvidia-primus-libs-340.46_1 ignore
+libnvidia-fatbinaryloader.so.440.31 nvidia-primus-libs-440.31_1 ignore
 libnvidia-ml.so.1 nvidia-primus-libs-346.47_1 ignore
 libnvidia-ml.so.1 nvidia-primus-libs-346.47_1 ignore
-libnvidia-glsi.so.430.14 nvidia-primus-libs-346.47_1 ignore
+libnvidia-glsi.so.440.31 nvidia-primus-libs-346.47_1 ignore
 libnvidia-ml.so.1 nvidia304-libs-304.00_1 ignore
 libnvidia-ml.so.1 nvidia340-libs-340.46_1 ignore
 libnvidia-ml.so.1 nvidia390-libs-390.87_1 ignore

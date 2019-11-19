@@ -1,11 +1,11 @@
 # -*- sh -*-
 # Template file for 'nvidia'
 
-_desc="NVIDIA drivers for linux"
+_desc="NVIDIA drivers for linux - special package for primus usage"
 
 pkgname=nvidia-primus
-version=430.14
-revision=7
+version=440.31
+revision=1
 maintainer="Hristos N. Triantafillou <voidpkg@hristos.lol>"
 license="Proprietary NVIDIA license"
 homepage="http://www.nvidia.com"
@@ -21,10 +21,16 @@ build_options="glvnd"
 desc_option_glvnd="Add support for NVIDIA's GL Vendor Neutral Dispatch implementation"
 build_options_default="glvnd"
 
+# https://www.nvidia.com/en-us/drivers/unix/
+# https://www.nvidia.com/Download/driverResults.aspx/153226/en-us
+
+# https://us.download.nvidia.com/XFree86/Linux-x86_64/440.31/NVIDIA-Linux-x86_64-440.31-no-compat32.run
+# https://us.download.nvidia.com/XFree86/Linux-x86_64/440.31/NVIDIA-Linux-x86_64-440.31.run
+
 if [ "$XBPS_TARGET_MACHINE" = "x86_64" ]; then
 	_pkg="NVIDIA-Linux-x86_64-${version}-no-compat32"
 	distfiles="https://us.download.nvidia.com/XFree86/Linux-x86_64/${version}/${_pkg}.run"
-	checksum=0f583a277b1731cb8327510b75dba9cf7adf5c781247e4f48bcc9f358253278f
+	checksum=daa58629a42632e47617c701b3da93d4bc69d0b983514f78329f0784dd4736df
 	subpackages="nvidia-primus-gtklibs nvidia-primus-dkms
 	 nvidia-primus-opencl nvidia-primus-libs"
 	depends="nvidia-primus-libs-${version}_${revision}
@@ -33,7 +39,7 @@ if [ "$XBPS_TARGET_MACHINE" = "x86_64" ]; then
 else
 	_pkg="NVIDIA-Linux-x86_64-${version}"
 	distfiles="https://us.download.nvidia.com/XFree86/Linux-x86_64/${version}/${_pkg}.run"
-	checksum=00d46ffaf3e1e430081ddbd68b74cc361cd1328e8944224dfe69630dd8540f17
+	checksum=cd592f385c9bfb798f973225dfd086654973984762b669c7d765b074c0d8850f
 	subpackages="nvidia-primus-libs"
 	depends="pkgconf"
 fi
@@ -45,11 +51,15 @@ do_extract() {
 	rm -f ${_pkg}.run
 }
 
-pre_install() {
-	cd ${_pkg}
-	cp nvidia_icd.json.template nvidia_icd.json
-	sed -i -e 's:__NV_VK_ICD__:libGLX_nvidia.so.0:g' nvidia_icd.json
-}
+# => nvidia-primus-440.31_1: running pre_install ...
+# cp: cannot stat 'nvidia_icd.json.template': No such file or directory
+# => ERROR: nvidia-primus-440.31_1: pre_install: 'cp nvidia_icd.json.template nvidia_icd.json' exited with 1
+# => ERROR:   in pre_install() at srcpkgs/nvidia-primus/template:56
+# pre_install() {
+# 	cd ${_pkg}
+# 	cp nvidia_icd.json.template nvidia_icd.json
+# 	sed -i -e 's:__NV_VK_ICD__:libGLX_nvidia.so.0:g' nvidia_icd.json
+# }
 
 do_install() {
 	cd ${_pkg}
@@ -65,9 +75,14 @@ do_install() {
 		ln -sf libglxserver_nvidia.so.${version} \
 			${DESTDIR}/usr/lib/xorg/modules/extensions/libglxserver_nvidia.so.1
 
-		vinstall libnvidia-egl-wayland.so.1.1.2 755 usr/lib/nvidia
-		ln -sf libnvidia-egl-wayland.so.1.1.2 \
-			${DESTDIR}/usr/lib/nvidia/libnvidia-egl-wayland.so.1
+        # => nvidia-primus-440.31_1: running do_install ...
+        # => ERROR: nvidia-primus-440.31_1: vinstall: cannot find 'libnvidia-egl-wayland.so.1.1.2'...
+        # => ERROR: nvidia-primus-440.31_1: do_install: 'return 1' exited with 1
+        # => ERROR:   in _noglob_helper() at common/environment/setup/install.sh:12
+        # => ERROR:   in do_install() at srcpkgs/nvidia-primus/template:78
+		# vinstall libnvidia-egl-wayland.so.1.1.2 755 usr/lib/nvidia
+		# ln -sf libnvidia-egl-wayland.so.1.1.2 \
+		# 	${DESTDIR}/usr/lib/nvidia/libnvidia-egl-wayland.so.1
 
 		vinstall 10_nvidia.json 755 usr/share/glvnd/egl_vendor.d
 		vinstall 10_nvidia_wayland.json \
