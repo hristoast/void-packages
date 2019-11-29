@@ -1,8 +1,8 @@
 # Template file for 'libGL'
 pkgname=libGL
 archs="x86_64 i686"
-version=19.3
-revision=rc4
+version=20.0.0
+revision=dev1
 wrksrc="mesa-${version}"
 build_style=meson
 configure_args="-Dshared-glapi=true -Dgbm=true -Degl=true
@@ -20,10 +20,10 @@ makedepends="elfutils-devel expat-devel libXdamage-devel libXvMC-devel
 short_desc="Graphics library similar to SGI's OpenGL - RC package with ACO"
 maintainer="Orphaned <orphan@voidlinux.org>"
 license="MIT, LGPL-2.1-or-later"
-homepage="https://www.mesa3d.org/"
-changelog="https://gitlab.freedesktop.org/mesa/mesa/commits/19.3"
-distfiles="https://gitlab.freedesktop.org/mesa/mesa/-/archive/19.3/mesa-19.3.tar.gz"
-checksum=d3e49e0921eb801b803224111a653b94a5cc2c97913900c2d63a4d74c4d02465
+homepage="https://github.com/daniel-schuermann/mesa"
+changelog="https://github.com/daniel-schuermann/mesa/commit/${version}"
+distfiles="https://hristos.lol/f/mesa-${version}-${revision}.tar.gz"
+checksum=51e9d9d522184d15ca06f290be1640b112d3ed6258a4241596273296598c7964
 
 build_options="wayland"
 build_options_default="wayland"
