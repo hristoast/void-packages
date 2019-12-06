@@ -1,8 +1,9 @@
 # Template file for 'libGL'
+# https://github.com/daniel-schuermann/mesa/tree/3409c06e26d8fec1eeaaf8eaef55dbd0405f141b
 pkgname=libGL
 archs="x86_64 i686"
 version=20.0.0
-revision=dev1
+revision=dev2
 wrksrc="mesa-${version}"
 build_style=meson
 configure_args="-Dshared-glapi=true -Dgbm=true -Degl=true
@@ -23,7 +24,7 @@ license="MIT, LGPL-2.1-or-later"
 homepage="https://github.com/daniel-schuermann/mesa"
 changelog="https://github.com/daniel-schuermann/mesa/commit/${version}"
 distfiles="https://hristos.lol/f/mesa-${version}-${revision}.tar.gz"
-checksum=51e9d9d522184d15ca06f290be1640b112d3ed6258a4241596273296598c7964
+checksum=4a30dd445870e1ed4a8f318695226c110f8dba9090ab1e2a926e104c86bd4d0c
 
 build_options="wayland"
 build_options_default="wayland"
