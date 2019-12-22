@@ -1,7 +1,8 @@
+# -*- sh -*-
 # Template file for 'mesa'
 pkgname=mesa
-version=19.2.7
-revision=3
+version=19.3.1
+revision=dev1
 wrksrc="mesa-${version}"
 build_style=meson
 configure_args="-Dglvnd=true -Dshared-glapi=true -Dgbm=true -Degl=true
@@ -24,7 +25,7 @@ license="MIT, LGPL-2.1-or-later"
 homepage="https://www.mesa3d.org/"
 changelog="https://www.mesa3d.org/relnotes/${version}.html"
 distfiles="https://mesa.freedesktop.org/archive/mesa-${version}.tar.xz"
-checksum=e3799fb7896fd9ed2f90f651fb907b95cdebfbd494968ff116e6bf1be143579e
+checksum=cd951db69c56a97ff0570a7ab2c0e39e6c5323f4cd8f4eb8274723e033beae59
 
 build_options="wayland"
 build_options_default="wayland"
@@ -182,7 +183,7 @@ mesa-ati-dri_package() {
 	depends="mesa-${version}_${revision}"
 	lib32files="/usr/share/vulkan/icd.d/radeon_icd.i686.json"
 	pkg_install() {
-		vmove "usr/lib/libXvMCr[36]00.so.*"
+		vmove "usr/lib/libXvMCr[36]00.so"
 		vmove "usr/lib/vdpau/libvdpau_r[36]00.so*"
 		vmove "usr/lib/vdpau/libvdpau_radeon*.so*"
 		vmove "usr/lib/xorg/modules/drivers/radeon*"
@@ -210,7 +211,7 @@ mesa-nouveau-dri_package() {
 	short_desc="Mesa DRI drivers for NVIDIA GPUs (nouveau dri)"
 	depends="mesa-${version}_${revision}"
 	pkg_install() {
-		vmove "usr/lib/libXvMCnouveau.so.*"
+		vmove "usr/lib/libXvMCnouveau.so"
 		vmove "usr/lib/vdpau/libvdpau_nouveau.so*"
 		vmove "usr/lib/xorg/modules/drivers/nouveau*"
 		vmove "usr/lib/dri/nouveau*"
