@@ -1,9 +1,9 @@
 # -*- sh -*-
 # Template file for 'mesa'
 pkgname=mesa
-version=19.3.1
+version=20.0.0
 revision=dev1
-wrksrc="mesa-${version}"
+wrksrc="mesa-3409c06e26d8fec1eeaaf8eaef55dbd0405f141b"
 build_style=meson
 configure_args="-Dglvnd=true -Dshared-glapi=true -Dgbm=true -Degl=true
  -Dgallium-vdpau=true -Dgallium-xvmc=true -Dosmesa=gallium
@@ -24,8 +24,8 @@ maintainer="Juan RP <xtraeme@gmail.com>"
 license="MIT, LGPL-2.1-or-later"
 homepage="https://www.mesa3d.org/"
 changelog="https://www.mesa3d.org/relnotes/${version}.html"
-distfiles="https://mesa.freedesktop.org/archive/mesa-${version}.tar.xz"
-checksum=cd951db69c56a97ff0570a7ab2c0e39e6c5323f4cd8f4eb8274723e033beae59
+distfiles="https://github.com/daniel-schuermann/mesa/archive/3409c06e26d8fec1eeaaf8eaef55dbd0405f141b.tar.gz"
+checksum=c0a580d95f8984637d9f7ad17e478f3f9dc49491a38b21a7dc81052cde6dfb94
 
 build_options="wayland"
 build_options_default="wayland"
