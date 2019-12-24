@@ -5,7 +5,7 @@ _desc="NVIDIA drivers for linux - special package for primus usage"
 
 pkgname=nvidia-primus
 version=440.31
-revision=1
+revision=2
 maintainer="Hristos N. Triantafillou <voidpkg@hristos.lol>"
 license="Proprietary NVIDIA license"
 homepage="http://www.nvidia.com"
