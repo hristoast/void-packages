@@ -1,15 +1,17 @@
 # -*- sh -*-
 # Template file for 'linux-gaming'
 #
+# -ck patch from:
+# http://ck.kolivas.org/patches/5.0/5.4/5.4-ck1/
+#
+# I've edited it to not add '-ck1' to the kernel version; it broke this build.
+#
 # "fsync" patch from:
 # https://aur.archlinux.org/cgit/aur.git/plain/futex-wait-multiple-5.2.1.patch?h=linux-fsync
 #
-# PDS patch from:
-# https://github.com/Tk-Glitch/PKGBUILDS/blob/2855033fb6c1f926f154b846f9b84b9b5815a481/linux54-tkg/linux54-tkg-patches/0005-v5.4_undead-pds099o.patch
-#
 pkgname=linux-gaming
 version=5.4.8
-revision=gaming1
+revision=g2
 wrksrc="linux-${version}"
 short_desc="Linux kernel and modules (${version%.*} series) with the undead-pds099o and fsync patchsets"
 maintainer="Helmut Pozimski <helmut@pozimski.eu>"
