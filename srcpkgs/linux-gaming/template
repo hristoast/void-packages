@@ -10,15 +10,15 @@
 # https://aur.archlinux.org/cgit/aur.git/plain/futex-wait-multiple-5.2.1.patch?h=linux-fsync
 #
 pkgname=linux-gaming
-version=5.4.8
-revision=g2
+version=5.4.10
+revision=g1
 wrksrc="linux-${version}"
 short_desc="Linux kernel and modules (${version%.*} series) with the undead-pds099o and fsync patchsets"
 maintainer="Helmut Pozimski <helmut@pozimski.eu>"
 license="GPL-2.0-only"
 homepage="https://www.kernel.org"
 distfiles="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-${version}.tar.xz"
-checksum=42c414c902193f9e8a1b70c728ca440de02d85dc29102f52ef98cfbf20d29a52
+checksum=f23c0218a5e3b363bb5a880972f507bb4dc4a290a787a7da08be07ea12042edd
 patch_args="-Np1"
 
 nodebug=yes  # -dbg package is generated below manually
