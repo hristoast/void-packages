@@ -11,7 +11,7 @@
 #
 pkgname=linux-gaming
 version=5.4.15
-revision=g1
+revision=2
 wrksrc="linux-${version}"
 short_desc="Linux kernel and modules (${version%.*} series) with the -ck and fsync patchsets"
 maintainer="Helmut Pozimski <helmut@pozimski.eu>"
@@ -31,7 +31,7 @@ archs="x86_64*"
 hostmakedepends="tar xz bc elfutils-devel flex gmp-devel kmod libmpc-devel
  libressl-devel perl uboot-mkimage cpio"
 
-_kernver="${version}_${revision}"
+_kernver="${version}-ck-fsync_${revision}"
 triggers="kernel-hooks"
 kernel_hooks_version="${_kernver}"
 
