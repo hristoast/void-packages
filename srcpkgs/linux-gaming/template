@@ -10,7 +10,7 @@
 # https://aur.archlinux.org/cgit/aur.git/plain/futex-wait-multiple-5.2.1.patch?h=linux-fsync
 #
 pkgname=linux-gaming
-version=5.4.17
+version=5.4.18
 revision=1
 wrksrc="linux-${version}"
 short_desc="Linux kernel and modules (${version%.*} series) with the -ck and fsync patchsets"
@@ -18,7 +18,7 @@ maintainer="Helmut Pozimski <helmut@pozimski.eu>"
 license="GPL-2.0-only"
 homepage="https://www.kernel.org"
 distfiles="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-${version}.tar.xz"
-checksum=945f2bf6af69eed0ac81ef75b571f37ae1e16a9bb8a2ae698a365ee3ec2c74b9
+checksum=92e9f1fd69543e9ce2a9e6eb918823b1846d2dd99246a74456263cd5ad234d89
 patch_args="-Np1"
 
 nodebug=yes  # -dbg package is generated below manually
@@ -32,6 +32,7 @@ hostmakedepends="tar xz bc elfutils-devel flex gmp-devel kmod libmpc-devel
  libressl-devel perl uboot-mkimage cpio"
 
 _kernver="${version}-ck-fsync_${revision}"
+_kernver1="${version}_${revision}"
 triggers="kernel-hooks"
 kernel_hooks_version="${_kernver}"
 
@@ -105,7 +106,6 @@ do_build() {
 	if [ "${_patchver}" ]; then
 		_version="EXTRAVERSION=${_patchver}"
 	fi
-    xbps-alternatives -g tar -s tar
 	export LDFLAGS=
 	make ARCH=$arch ${_version} ${_cross} ${makejobs} prepare
 	make ARCH=$arch ${_version} ${_cross} ${makejobs} ${_args}
@@ -155,6 +155,8 @@ do_install() {
 	# Switch to /usr.
 	vmkdir usr
 	mv ${DESTDIR}/lib ${DESTDIR}/usr
+
+    mv ${DESTDIR}/usr/lib/modules/${_kernver1} ${DESTDIR}/usr/lib/modules/${_kernver}
 
 	cd ${DESTDIR}/usr/lib/modules/${_kernver}
 	rm -f source build
