@@ -2,7 +2,7 @@
 # Template file for 'dolphin-emu'
 pkgname=dolphin-emu
 version=6.0
-revision=dev1
+revision=1
 archs="x86_64* ppc64le*"
 build_style=cmake
 configure_args="-DUSE_X11=1 -DUSE_EGL=0
@@ -18,9 +18,10 @@ short_desc="Gamecube / Wii / Triforce emulator"
 maintainer="Orphaned <orphan@voidlinux.org>"
 license="GPL-2.0-or-later"
 homepage="http://dolphin-emu.org"
-wrksrc="dolphin-0341288af2d9273f8f5635db9e27e689c27fdd5a"
-distfiles="https://github.com/dolphin-emu/dolphin/archive/0341288af2d9273f8f5635db9e27e689c27fdd5a.tar.gz"
-checksum=b4366430432190622459bf7a38171bd20b9a4df428bffbd470e9d8b47dac6366
+_sha="9a2d8a96233e062891d1210f9c79272899c3cdfe"
+wrksrc="dolphin-${_sha}"
+distfiles="https://github.com/dolphin-emu/dolphin/archive/${_sha}.tar.gz"
+checksum=6a90d9d1faefac1a1c32bae806e691ca1c1e02ebfeccac13e18f14d954901218
 nopie=yes
 
 case "$XBPS_TARGET_MACHINE" in
