@@ -1,0 +1,39 @@
+# -*- sh -*-
+# Template file for 'dolphin-emu'
+pkgname=primehack
+version=1.0.1.1
+revision=1
+archs="x86_64*"
+build_style=cmake
+configure_args="-DUSE_X11=1 -DUSE_EGL=0
+ -DwxWidgets_CONFIG_EXECUTABLE=/usr/bin/wx-config-3.0"
+hostmakedepends="pkg-config"
+makedepends="
+ zlib-devel glew-devel libusb-devel gtk+-devel miniupnpc-devel libevdev-devel
+ SDL2-devel pulseaudio-devel alsa-lib-devel ffmpeg-devel libgomp-devel libcurl-devel
+ portaudio-devel libopenal-devel soundtouch-devel lzo-devel qt5-devel
+ mbedtls-devel SFML-devel libenet-devel"
+depends="desktop-file-utils"
+short_desc="Gamecube / Wii / Triforce emulator"
+maintainer="Orphaned <orphan@voidlinux.org>"
+license="GPL-2.0-or-later"
+homepage="https://github.com/shiiion/dolphin#primehack--a-dolphin-emulator-fork-for-metroid-prime-trilogy"
+_sha="ab43100e715479f876177212176549101b15fc8a"
+wrksrc="dolphin-${_sha}"
+distfiles="https://github.com/shiiion/dolphin/archive/${_sha}.tar.gz"
+# wrksrc="dolphin-${version}"
+# distfiles="https://github.com/shiiion/dolphin/archive/${version}.tar.gz"
+# distfiles="https://github.com/shiiion/dolphin/archive/${version}.tar.gz"
+checksum=8eec7d2edf1367e9a84f03a7fea1fa0b891c4f8607206597042ed9dbf2168674
+nopie=yes
+
+case "$XBPS_TARGET_MACHINE" in
+	x86_64*|aarch64*) ;;
+	*) configure_args+=" -DENABLE_GENERIC=ON" ;;
+esac
+
+post_install() {
+	rm -f ${DESTDIR}/usr/lib/*.a
+    mv -v ${DESTDIR}/usr/bin/dolphin-emu ${DESTDIR}/usr/bin/primehack-emu
+    mv -v ${DESTDIR}/usr/bin/dolphin-emu-nogui ${DESTDIR}/usr/bin/primehack-emu-nogui
+}
