@@ -1,14 +1,14 @@
 # Template file for 'rpi-base'
 pkgname=rpi-base
 version=2.5
-revision=4
+revision=5
 homepage="http://www.voidlinux.org"
 short_desc="Void Linux RaspberryPi base files"
-maintainer="Orphaned <orphan@voidlinux.org>"
+maintainer="Piraty <piraty1@inbox.ru>"
 license="Public Domain"
 
 archs="armv6l* armv7l* aarch64*"
-depends="virtual?ntp-daemon rpi-firmware rpi-kernel"
+depends="virtual?ntp-daemon rpi-firmware"
 
 do_install() {
 	case "$XBPS_TARGET_MACHINE" in
