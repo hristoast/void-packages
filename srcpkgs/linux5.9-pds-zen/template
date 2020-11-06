@@ -1,7 +1,7 @@
 # -*- sh -*-
-# Template file for 'linux5.8-pds-zen2'
-pkgname=linux5.8-pds-zen2
-version=5.8.18
+# Template file for 'linux5.9-pds-zen'
+pkgname=linux5.9-pds-zen
+version=5.9.3
 revision=1
 wrksrc="linux-${version}"
 short_desc="Linux kernel and modules (${version%.*} series)"
@@ -9,7 +9,7 @@ maintainer="Hristos N. Triantafillou <voidpkg@hristos.lol>"
 license="GPL-2.0-only"
 homepage="https://www.kernel.org"
 distfiles="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-${version}.tar.xz"
-checksum=4ab4a3f694b7b4cfbe78871eab34c8039ad33692144c45c669827a594da85534
+checksum=d1ae28dfe9d25b73f2e437319df1b77d7ac1d0efd188cfb5df84a6784a318a73
 python_version=3
 patch_args="-Np1"
 
@@ -24,9 +24,9 @@ noshlibprovides=yes
 preserve=yes
 
 hostmakedepends="tar xz bc elfutils-devel flex gmp-devel kmod libmpc-devel
- libressl-devel perl uboot-mkimage cpio pahole"
+ libressl-devel perl uboot-mkimage cpio pahole python3"
 
-_kernver="${version}-pds-zen2_${revision}"
+_kernver="${version}-pds-zen_${revision}"
 triggers="kernel-hooks"
 kernel_hooks_version="${_kernver}"
 
@@ -316,7 +316,7 @@ do_install() {
 	# ... and run depmod again.
 	depmod -b ${DESTDIR}/usr -F System.map ${_kernver}
 }
-linux5.8-pds-zen2-headers_package() {
+linux5.9-pds-zen-headers_package() {
 	preserve=yes
 	nostrip=yes
 	noshlibprovides=yes
@@ -326,7 +326,7 @@ linux5.8-pds-zen2-headers_package() {
 		vmove usr/lib/modules/${_kernver}/build
 	}
 }
-linux5.8-pds-zen2-dbg_package() {
+linux5.9-pds-zen-dbg_package() {
 	preserve=yes
 	nostrip=yes
 	noverifyrdeps=yes
