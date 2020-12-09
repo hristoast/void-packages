@@ -1,0 +1,12 @@
+# -*- sh -*-
+# Template file for 'hristoast-removed'
+pkgname=hristoast-removed
+version=0.1.20230213
+revision=1
+build_style=meta
+short_desc="Uninstalls packages removed from Hristos' repository"
+maintainer="Hristos N. Triantafillou <me@hristos.co>"
+license="Public Domain"
+homepage="https://hristos.co/xbps/"
+
+replaces=""
