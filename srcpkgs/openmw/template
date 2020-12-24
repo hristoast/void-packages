@@ -1,20 +1,22 @@
+# -*- sh -*-
 # Template file for 'openmw'
 pkgname=openmw
-version=0.46.0
+version=0.47.0
 revision=1
+_sha="a4f6448f3456990236880f385a556d587b07df8e"
 wrksrc="${pkgname}-${pkgname}-${version}"
 build_style=cmake
 configure_args="-DDESIRED_QT_VERSION=5"
 hostmakedepends="pkg-config qt5-host-tools qt5-qmake"
 makedepends="SDL2-devel boost-devel bullet-devel ffmpeg-devel libXt-devel
  libmygui-devel libopenal-devel libunshield-devel osg-devel qt5-devel"
-short_desc="Open Implementation of Morrowind's Engine"
-maintainer="John <me@johnnynator.dev>"
+short_desc="Open Implementation of Morrowind's Engine - Development Build"
+maintainer="Hristos N. Triantafillou <voidpkg@hristos.lol>"
 license="GPL-3.0-or-later"
 homepage="http://openmw.org"
 changelog="https://openmw.org/2018/openmw-0-44-0-released/"
-distfiles="https://gitlab.com/OpenMW/openmw/-/archive/openmw-${version}/openmw-openmw-${version}.tar.gz"
-checksum=07a35a8f15f67f5aa7210c2a307a6db5660a9b61fe34983c35b172c8671afd58
+distfiles="https://gitlab.com/OpenMW/openmw/-/archive/${_sha}/openmw-${_sha}.tar.gz"
+checksum=0360eada7203956db9910d1f56d7b7de26f125a27504a73c21f1038188f64957
 
 if [ "$XBPS_TARGET_ENDIAN" != "le" ]; then
 	broken="https://gitlab.com/OpenMW/openmw/issues/564"
