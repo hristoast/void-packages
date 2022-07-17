@@ -1,8 +1,9 @@
 # Template file for 'wem'
 pkgname=wem
 version=0.8.7
-revision=1
+revision=2
 build_style=go
+go_ldflags="-linkmode=external -s -w -X 'git.sr.ht/~hristoast/wem/cfg.WemVersion=$$(git describe --tags)'"
 go_import_path=git.sr.ht/~hristoast/wem
 go_package="${go_import_path}"
 short_desc="CLI tool for managing wine prefixes"
