@@ -1,7 +1,7 @@
 # -*- sh -*-
 # Template file for 'wem'
 pkgname=wem
-version=0.8.8
+version=0.8.9
 revision=1
 build_style=go
 go_ldflags="-linkmode=external -s -w -X 'git.sr.ht/~hristoast/wem/cfg.WemVersion=${version}_${revision}'"
@@ -12,4 +12,4 @@ maintainer="Hristos N. Triantafillou <me@hristos.co>"
 license="GPL-3.0-or-later"
 homepage="https://wem.hristos.co/"
 distfiles="https://git.sr.ht/~hristoast/wem/archive/${version}.tar.gz"
-checksum=29172f3559af38b2b1a0c9b6c3e79fa2c26f11e834298c5a81ffc3d3abb2b676
+checksum=825b07f7102843ce6f195cb9a85f28bac07cb92ec0ab5bc0b5261d0f6493aad8
