@@ -1,8 +1,9 @@
+# -*- sh -*-
 # Template file for 'eduke32'
 pkgname=eduke32
-version=2022.02.06
+version=2022.07.27
 revision=1
-_rev=9c9518fdfc83b5ee7844dadda380209242e3fc9d
+_rev=9ae924b98be227dd2c3993268a40af1a61055f7e
 wrksrc="eduke32-master-${_rev}"
 build_style=gnu-makefile
 hostmakedepends="pkg-config"
@@ -12,7 +13,7 @@ maintainer="Hristos N. Triantafillout <me@hristos.co>"
 license="Public Domain"
 homepage="https://wiki.eduke32.com/wiki/Acquiring_the_EDuke32_Source_Code"
 distfiles="https://voidpoint.io/terminx/eduke32/-/archive/master/eduke32-${_rev}.tar.gz"
-checksum=50da62b8f7623f8f6612c15d756bd469936775eb90172feaf0fa590b32aaf0f7
+checksum=a98c287bca77601b2e3819db953a584fd6a16bdeb96099cab80e444fd47aa96c
 
 do_install() {
     vinstall eduke32 755 usr/bin
