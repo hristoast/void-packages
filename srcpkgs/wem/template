@@ -1,10 +1,10 @@
 # -*- sh -*-
 # Template file for 'wem'
 pkgname=wem
-version=0.8.9
+version=0.9.1
 revision=1
 build_style=go
-go_ldflags="-linkmode=external -s -w -X 'git.sr.ht/~hristoast/wem/cfg.WemVersion=${version}_${revision}'"
+go_ldflags="-linkmode=external -X 'git.sr.ht/~hristoast/wem/cfg.WemVersion=${version}_${revision}'"
 go_import_path=git.sr.ht/~hristoast/wem/cmd/wem
 go_package="${go_import_path}"
 short_desc="CLI tool for managing wine prefixes"
@@ -12,4 +12,4 @@ maintainer="Hristos N. Triantafillou <me@hristos.co>"
 license="GPL-3.0-or-later"
 homepage="https://wem.hristos.co/"
 distfiles="https://git.sr.ht/~hristoast/wem/archive/${version}.tar.gz"
-checksum=825b07f7102843ce6f195cb9a85f28bac07cb92ec0ab5bc0b5261d0f6493aad8
+checksum=646ab15353cd20c52ae0ec68111c74db5bec1f05c3a813452f5d259197abb53d
