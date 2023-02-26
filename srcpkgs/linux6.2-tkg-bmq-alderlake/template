@@ -1,7 +1,7 @@
 # -*- sh -*-
 # Template file for 'linux6.2-tkg-bmq-alderlake'
 pkgname=linux6.2-tkg-bmq-alderlake
-version=6.2.0
+version=6.2.1
 revision=1
 short_desc="Linux kernel and modules (${version%.*} series)"
 maintainer="Hristos N. Triantafillou <me@hristos.co>"
@@ -14,11 +14,12 @@ if [ "${version##*.}" != 0 ]; then
 	skip_extraction="patch-${version}.xz"
 fi
 
-checksum=74862fa8ab40edae85bb3385c0b71fe103288bce518526d63197800b3cbdecb1
+checksum="74862fa8ab40edae85bb3385c0b71fe103288bce518526d63197800b3cbdecb1
+ f533d80e81ca77b0cad4bd989d6c628848c5ed42dbfae74d0cca736c7234b965"
 python_version=3
 
 # XXX Restrict archs until a proper <arch>-dotconfig is available in FILESDIR.
-archs="x86_64* aarch64*"
+archs="x86_64*"
 
 nodebug=yes  # -dbg package is generated below manually
 nostrip=yes
