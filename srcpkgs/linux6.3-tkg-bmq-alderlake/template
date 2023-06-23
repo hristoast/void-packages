@@ -1,7 +1,7 @@
 # -*- sh -*-
 # Template file for 'linux6.3-tkg-bmq-alderlake'
 pkgname=linux6.3-tkg-bmq-alderlake
-version=6.3.7
+version=6.3.8
 revision=1
 short_desc="Linux kernel and modules (${version%.*} series with TKG and alderlake patches)"
 maintainer="Hristos N. Triantafillou <me@hristos.co>"
@@ -15,7 +15,7 @@ if [ "${version##*.}" != 0 ]; then
 fi
 
 checksum="ba3491f5ed6bd270a370c440434e3d69085fcdd528922fa01e73d7657db73b1e
- 779d8d84ca937b04cdea642976bf2af5c352417f6d6921bea4f2893032c23184"
+ 927ba93d3da556c8e30b2640aa3f19c3c3cda66c655754e0798024020e2981b4"
 python_version=3
 
 # XXX Restrict archs until a proper <arch>-dotconfig is available in FILESDIR.
