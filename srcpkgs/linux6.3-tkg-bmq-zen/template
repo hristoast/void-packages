@@ -1,7 +1,7 @@
 # -*- sh -*-
 # Template file for 'linux6.3-tkg-bmq-zen'
 pkgname=linux6.3-tkg-bmq-zen
-version=6.3.11
+version=6.3.12
 revision=1
 short_desc="Linux kernel and modules (${version%.*} series with TKG and zen patches)"
 maintainer="Hristos N. Triantafillou <me@hristos.co>"
@@ -15,7 +15,7 @@ if [ "${version##*.}" != 0 ]; then
 fi
 
 checksum="ba3491f5ed6bd270a370c440434e3d69085fcdd528922fa01e73d7657db73b1e
- aee18a7175958e7821bc5485dc29731fbacfdff9f94b097708059cc234796204"
+ 37c340dc4c902708e9c224b9792db6fb7617683d8d8a77c703cfd76dbf3794c0"
 python_version=3
 
 # XXX Restrict archs until a proper <arch>-dotconfig is available in FILESDIR.
