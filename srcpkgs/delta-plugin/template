@@ -1,7 +1,7 @@
 # -*- sh -*-
 # Template file for 'delta-plugin'
 pkgname=delta-plugin
-version=0.19.0
+version=0.20.0
 revision=1
 build_style=cargo
 short_desc="A tool for handling and converting markup-based versions of esp files."
@@ -9,7 +9,7 @@ maintainer="Hristos N. Triantafillout <me@hristos.co>"
 license="GPLv3"
 homepage="https://gitlab.com/bmwinger/delta-plugin"
 distfiles="https://gitlab.com/bmwinger/delta-plugin/-/archive/${version}/delta-plugin-${version}.tar.gz"
-checksum=f79e35c4f8fb0ab3e5d6d05f3c40afbfed820174302938ac4a971b148f7d1016
+checksum=fb774075f02bc952614558a7c7cb72619870dbf3db77d3bf4e347e74929cda61
 wrksrc="delta-plugin-${version}"
 
 post_install() {
