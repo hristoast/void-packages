@@ -1,10 +1,10 @@
 # -*- sh -*-
 # Template file for 'linux6.6-tkg'
 pkgname=linux6.6-tkg
-version=6.6.12
+version=6.6.32
 revision=1
-short_desc="Linux kernel and modules (${version%.*} series)"
-maintainer="Duncaen <duncaen@voidlinux.org>"
+short_desc="Linux kernel and modules (${version%.*} series with TKG patches)"
+maintainer="Hristos N. Triantafillou <me@hristos.co>"
 license="GPL-2.0-only"
 homepage="https://www.kernel.org"
 distfiles="${KERNEL_SITE}/kernel/v${version%%.*}.x/linux-${version%.*}.tar.xz"
@@ -15,7 +15,7 @@ if [ "${version##*.}" != 0 ]; then
 fi
 
 checksum="d926a06c63dd8ac7df3f86ee1ffc2ce2a3b81a2d168484e76b5b389aba8e56d0
- 899bf67848c6c7e16d4affca1825bab7f0078a1e911412dace4ec60232f59894"
+ a8e2ed9d5437d4c4abeb2d2c4d3aea7f4ab3c0741bf3c95fd587ed5f30815f94"
 python_version=3
 
 # XXX Restrict archs until a proper <arch>-dotconfig is available in FILESDIR.
