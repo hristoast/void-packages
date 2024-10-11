@@ -1,7 +1,7 @@
 # -*- sh -*-
 # Template file for 'linux6.6-tkg-alderlake'
 pkgname=linux6.6-tkg-alderlake
-version=6.6.53
+version=6.6.54
 revision=1
 short_desc="Linux kernel and modules (${version%.*} series with TKG patches)"
 maintainer="Hristos N. Triantafillou <me@hristos.co>"
@@ -15,7 +15,7 @@ if [ "${version##*.}" != 0 ]; then
 fi
 
 checksum="d926a06c63dd8ac7df3f86ee1ffc2ce2a3b81a2d168484e76b5b389aba8e56d0
- aff8c976c11e07af6176779df502898fba1609235290ec8d3a437ae62436c9a8"
+ de1844e09e3a87df3901f69c64ef18b19935a1d2bd46d6e45133c7ac6e22e6ad"
 python_version=3
 
 # XXX Restrict archs until a proper <arch>-dotconfig is available in FILESDIR.
