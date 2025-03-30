@@ -1,9 +1,9 @@
 # -*- sh -*-
 # Template file for 'eduke32'
 pkgname=eduke32
-version=2023.10.20
-revision=1
-_rev=3ac92f903b2fb8d91216b2d5c0bf315f3b2d5f40
+version=2025.03.29
+revision=2
+_rev=821c90525cf475e4413a57cbeca5ddc68f6071e9
 wrksrc="eduke32-master-${_rev}"
 build_style=gnu-makefile
 hostmakedepends="pkg-config"
@@ -13,9 +13,14 @@ maintainer="Hristos N. Triantafillout <me@hristos.co>"
 license="Public Domain"
 homepage="https://wiki.eduke32.com/wiki/Acquiring_the_EDuke32_Source_Code"
 distfiles="https://voidpoint.io/terminx/eduke32/-/archive/master/eduke32-${_rev}.tar.gz"
-checksum=167fce7b18b9d6b563e60214f478cf5499e7708b3b1c14c19e90ab6cda1e823c
+checksum=2ce48a4788d817de4a756be1993c92b25802bb1da1d762880c3a1a63c359adee
+
+do_build() {
+    make -j"$(nproc)" eduke32 mapster32 voidsw
+}
 
 do_install() {
     vinstall eduke32 755 usr/bin
     vinstall mapster32 755 usr/bin
+    vinstall voidsw 755 usr/bin
 }
