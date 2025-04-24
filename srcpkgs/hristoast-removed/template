@@ -1,7 +1,7 @@
 # -*- sh -*-
 # Template file for 'hristoast-removed'
 pkgname=hristoast-removed
-version=0.1.20250208
+version=0.1.20250423
 revision=1
 build_style=meta
 short_desc="Uninstalls packages removed from Hristos' repository"
@@ -73,4 +73,22 @@ replaces="
   linux6.8-tkg-zen<=6.8.7_1
   linux6.8-tkg-zen-dbg<=6.8.7_1
   linux6.8-tkg-zen-headers<=6.8.7_1
+  linux6.12-tkg-bmq<=6.12.6_1
+  linux6.12-tkg-bmq-dbg<=6.12.6_1
+  linux6.12-tkg-bmq-headers<=6.12.6_1
+  linux6.12-tkg-bmq-alderlake<=6.12.6_1
+  linux6.12-tkg-bmq-alderlake-dbg<=6.12.6_1
+  linux6.12-tkg-bmq-alderlake-headers<=6.12.6_1
+  linux6.12-tkg-bmq-zen<=6.12.6_1
+  linux6.12-tkg-bmq-zen-dbg<=6.12.6_1
+  linux6.12-tkg-bmq-zen-headers<=6.12.6_1
+  linux6.13-tkg-bmq<=6.13.11_1
+  linux6.13-tkg-bmq-dbg<=6.13.11_1
+  linux6.13-tkg-bmq-headers<=6.13.11_1
+  linux6.13-tkg-bmq-alderlake<=6.13.11_1
+  linux6.13-tkg-bmq-alderlake-dbg<=6.13.11_1
+  linux6.13-tkg-bmq-alderlake-headers<=6.13.11_1
+  linux6.13-tkg-bmq-zen<=6.13.11_1
+  linux6.13-tkg-bmq-zen-dbg<=6.13.11_1
+  linux6.13-tkg-bmq-zen-headers<=6.13.11_1
 "
