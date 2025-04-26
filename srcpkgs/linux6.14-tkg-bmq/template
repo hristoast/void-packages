@@ -32,6 +32,7 @@ noverifyrdeps=yes
 noshlibprovides=yes
 preserve=yes
 
+depends="hristoast-removed"
 hostmakedepends="tar xz bc elfutils-devel flex gmp-devel kmod libmpc-devel
  pkg-config openssl-devel perl uboot-mkimage cpio pahole python3 zstd"
 
