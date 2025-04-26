@@ -28,9 +28,9 @@ cd ..
 sed -i "s|^linux$version|linux$version-tkg-bmq-alderlake|;s|'linux$version'|'linux$version-tkg-bmq-alderlake'|" srcpkgs/linux"$version"-tkg-bmq-alderlake/template
 sed -i "s|^linux$version|linux$version-tkg-bmq-zen|;s|'linux$version'|'linux$version-tkg-bmq-zen'|" srcpkgs/linux"$version"-tkg-bmq-zen/template
 sed -i "s|^linux$version|linux$version-tkg-bmq|;s|'linux$version'|'linux$version-tkg-bmq'|" srcpkgs/linux"$version"-tkg-bmq/template
-sed -i "s|_kernver=\"\${version}_\${revision}\"|_kernver=\"\${version}-tkg-bmq-alderlake_\${revision}\"|" srcpkgs/linux"$version"-tkg-bmq-alderlake/template
-sed -i "s|_kernver=\"\${version}_\${revision}\"|_kernver=\"\${version}-tkg-bmq-zen_\${revision}\"|" srcpkgs/linux"$version"-tkg-bmq-zen/template
-sed -i "s|_kernver=\"\${version}_\${revision}\"|_kernver=\"\${version}-tkg-bmq_\${revision}\"|" srcpkgs/linux"$version"-tkg-bmq/template
+sed -i "s|}_|}-tkg-bmq-alderlake_|" srcpkgs/linux"$version"-tkg-bmq-alderlake/template
+sed -i "s|}_|}-tkg-bmq-zen_|" srcpkgs/linux"$version"-tkg-bmq-zen/template
+sed -i "s|}_|}-tkg-bmq_|" srcpkgs/linux"$version"-tkg-bmq/template
 sed -i "s|pkgname=linux$version|pkgname=linux$version-tkg-bmq-alderlake|" srcpkgs/linux"$version"-tkg-bmq-alderlake/template
 sed -i "s|pkgname=linux$version|pkgname=linux$version-tkg-bmq-zen|" srcpkgs/linux"$version"-tkg-bmq-zen/template
 sed -i "s|pkgname=linux$version|pkgname=linux$version-tkg-bmq|" srcpkgs/linux"$version"-tkg-bmq/template
