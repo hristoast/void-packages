@@ -1,7 +1,7 @@
 # -*- sh -*-
 # Template file for 'hristoast-removed'
 pkgname=hristoast-removed
-version=0.1.20250423
+version=0.1.20251010
 revision=1
 metapackage=yes
 short_desc="Uninstalls packages removed from Hristos' repository"
