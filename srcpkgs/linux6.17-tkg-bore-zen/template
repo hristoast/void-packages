@@ -1,7 +1,7 @@
 # -*- sh -*-
 # Template file for 'linux6.17-tkg-bore-zen'
 pkgname=linux6.17-tkg-bore-zen
-version=6.17.10
+version=6.17.11
 revision=1
 short_desc="Linux kernel and modules (${version%.*} series with TKG patches)"
 maintainer="Hristos <me@hristos.co>"
@@ -19,7 +19,7 @@ rc*) distfiles="https://git.kernel.org/torvalds/t/linux-${version%.*}-${version#
 esac
 
 checksum="9b607166a1c999d8326098121222feb080a20a3253975fcdfa2de96ba7f757a7
- 46e540e637bc6816ba1b89a5898dc8f8b46729448f91682d78c8da84e9fa0e45"
+ 45c01e69183c9525e9611cc304f4da62734848b230f2cdae880280d68e6db074"
 
 python_version=3
 
