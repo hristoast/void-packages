@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-version=${KERNVER-6.17}
+version=${KERNVER-6.18}
 
 cd "$(realpath "$(dirname "${0}")")/srcpkgs"
 
