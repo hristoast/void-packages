@@ -1,0 +1,17 @@
+# Template file for 'obs-plugin-backgroundremoval-bin'
+pkgname=obs-plugin-backgroundremoval-bin
+version=1.3.5
+revision=1
+archs="x86_64"
+short_desc="An OBS plugin for removing background in portrait images (video), making it easy to replace the background when recording or streaming."
+maintainer="Hristos <me@hristos.co>"
+license="GPL-3.0-only"
+homepage="https://obsproject.com/forum/resources/background-removal-virtual-green-screen-low-light-enhance.1260/"
+distfiles="https://github.com/royshil/obs-backgroundremoval/releases/download/$version/obs-backgroundremoval-$version-x86_64-linux-gnu.deb"
+checksum=455a45f3be415f50039eeed9a23e62edb5de35c8795f9e0ddf035d9103a6ef96
+
+do_install() {
+	vinstall lib/x86_64-linux-gnu/obs-plugins/obs-backgroundremoval.so 0644 usr/lib/obs-plugins/
+	vcopy lib/x86_64-linux-gnu/obs-plugins/obs-backgroundremoval usr/lib/obs-plugins/
+    vcopy share/ usr/share/
+}
