@@ -1,7 +1,7 @@
 # -*- sh -*-
 # Template file for 'linux6.18-tkg-bore-alderlake'
 pkgname=linux6.18-tkg-bore-alderlake
-version=6.18.2
+version=6.18.3
 revision=1
 short_desc="Linux kernel and modules (${version%.*} series with TKG patches)"
 maintainer="Hristos <me@hristos.co>"
@@ -19,7 +19,7 @@ rc*) distfiles="https://git.kernel.org/torvalds/t/linux-${version%.*}-${version#
 esac
 
 checksum="9106a4605da9e31ff17659d958782b815f9591ab308d03b0ee21aad6c7dced4b
- cc603703572e2efad9d1b59d88def7e7dbed1e807e1e33a17bd08ef26ba7f880"
+ 7f7c6860257727176412596da2f73530003d7416a7c1cfbb9358cf6ca1b59a03"
 
 python_version=3
 
